@@ -1,3 +1,12 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About-Cinescope Dashboard",
+  description: "Learn more about Cinescope Dashboard ",
+};
+
+
+
 export default function aboutPage(){
     return(
         <div className="flex flex-col min-h-screen">
