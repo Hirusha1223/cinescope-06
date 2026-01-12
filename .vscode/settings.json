@@ -1,7 +1,6 @@
 {
-    "cSpell.words": [
-        "cinescope",
-        "logomark",
-        "vercel"
-    ]
+  "cSpell.words": ["cinescope", "logomark", "vercel"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "css.lint.unknownProperties": "ignore"
 }
