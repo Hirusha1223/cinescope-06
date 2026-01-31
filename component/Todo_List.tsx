@@ -5,12 +5,11 @@ export default function TodoList() {
     <>
       <h1>Hedy Lamarr&apos;s Todos</h1>
       <Image
-        src="https://i.imgur.com/yXOvdOSs.jpg" 
-        alt="Hedy Lamarr" 
+        src="https://i.imgur.com/yXOvdOSs.jpg"
+        alt="Hedy Lamarr"
         className="photo"
-        width={200} 
+        width={200}
         height={300}
-
       />
       <ul>
         <li>Invent new traffic lights</li>

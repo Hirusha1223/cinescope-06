@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import Header from "@/component/ui/Header";
-import Footer from "@/component/ui/Footer";
-import { inter, roboto_mono } from "./font";
-
-
-
-
+import { inter, roboto_mono } from "@/app/fonts";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Cinescope Dashboard",
@@ -20,18 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" className="bg-emerald-800">
+    <html lang="en" data-theme="light">
       <body
-        className={`${inter.variable} ${roboto_mono.variable} antialiased font-inter`}
+        className={cn(inter.variable, roboto_mono.variable, inter.className)}
       >
-        <div className="flex flex-col min-h-screen">
-             <Header/>
-            {children}
-            <Footer/>
-
-        </div>
-        
-        
+        {children}
       </body>
     </html>
   );
