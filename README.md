@@ -1,5 +1,9 @@
 # Cinescope 06
 
+Connect to Cinescope-Cluster
+username=chavikarahirusha7_db_user
+password=TU44qFKSK0fqADe5
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -1,14 +1,18 @@
 export interface MovieData {
-  id: number;
+  _id: string;
   title: string;
-  genre: string;
-  releaseyear: number;
+  plot: string;
+  poster: string;
+  genres: string[];
+  year: number;
+  imdb: { rating: number };
   runtime: number;
-  ratings: number;
+  type: string;
+  directors: string[];
 }
 
-export interface Allmoviedata {
+export interface MoviesActionResponse {
   movies: MovieData[];
-  success: boolean;
   message: string;
+  success: boolean;
 }

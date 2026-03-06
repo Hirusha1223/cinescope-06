@@ -1,13 +1,18 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "i.imgur.com",
         port: "",
-        pathname: "/**", // මේකෙන් අදහස් වෙන්නේ imgur එකේ ඕනෑම image එකක් allow කරනවා කියන එකයි
+        pathname: "/**", // imgur එකේ ඕනෑම image එකක් allow කරයි
+      },
+      {
+        protocol: "https",
+        hostname: "m.media-amazon.com",
+        port: "",
+        pathname: "/**", // Amazon media වල ඕනෑම image එකක් allow කරයි
       },
     ],
   },

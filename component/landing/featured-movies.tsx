@@ -20,13 +20,9 @@ export default function FeaturedMovies() {
         <Button variant="outline">View all</Button>
       </div>
 
-      <div className="space-y-6">
-        {/* {movie search filter} */}
-        <div className="w-full h-30.5 bg-purple-400 rounded-lg">
-          {/* movies list */}
-        </div>
-        <MoviesList />
-      </div>
+      {/* {movie search filter} */}
+
+      <MoviesList />
     </section>
   );
 }

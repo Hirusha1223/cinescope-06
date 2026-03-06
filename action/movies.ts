@@ -1,26 +1,40 @@
 "use server";
 
-import type { Allmoviedata } from "@/action/types"; // adjust the import path as needed
+import { db } from "@/db";
 
-export async function getMovies() {
+export const getMovies = async ({ limit = 8 }: { limit?: number }) => {
   try {
-    const response = await fetch(`${process.env.API_BASE_URL}/v1/movies`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-cache",
-    });
+    const parameters = new URLSearchParams();
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    if (limit) {
+      parameters.append("limit", limit.toString());
     }
 
-    const { movies }: Allmoviedata = await response.json();
+    const moviesResponse = await fetch(
+      `${process.env.API_BASE_URL}/v1/movies?${parameters.toString()}`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+        cache: "no-store",
+      },
+    );
 
-    return movies;
+    if (!moviesResponse.ok) {
+      throw new Error(
+        `Failed to fetch movies, status code: ${moviesResponse.status}`,
+      );
+    }
+
+    if (moviesResponse.status == 200) {
+      return await moviesResponse.json();
+    } else {
+      console.error("Failed to fetch movies, status code:");
+      return [];
+    }
   } catch (error) {
-    console.error("Error fetching movies", error);
+    console.error("Error fetching movies:", error);
     return [];
   }
-}
+};
